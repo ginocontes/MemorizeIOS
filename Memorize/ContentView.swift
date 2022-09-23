@@ -23,6 +23,7 @@ struct ContentView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     ForEach(viewModel.cards) { card in
                         CardView(card: card)
+                        .foregroundColor(viewModel.cardColor)
                         .aspectRatio(2/3, contentMode: .fit)
                         .onTapGesture {
                             viewModel.choose(card)
@@ -37,7 +38,7 @@ struct ContentView: View {
     }
     
     var title: some View {
-        Text("Memorize!")
+        Text(viewModel.themeName)
             .font(.title)
             .fontWeight(.bold)
             .foregroundColor(Color.red)
@@ -65,7 +66,6 @@ struct ContentView: View {
                         shape.fill()
                 }
             }
-            .foregroundColor(Color.red)
             .font(.largeTitle)
             
         }

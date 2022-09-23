@@ -63,6 +63,21 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var content: CardContent
         var id: Int
     }
+    
+    struct Theme {
+        let name: String
+        let contents: [CardContent]
+        let numberOfPairOfCards: Int
+        let cardColor: CardColor
+        
+        enum CardColor {
+            case ORANGE
+            case RED
+            case GREEN
+        }
+        
+        
+    }
 
 }
 
